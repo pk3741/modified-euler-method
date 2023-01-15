@@ -7,7 +7,7 @@ Implementation of algorithm solving differential equation using Modified Euler's
 * Pandas
 
 ### Usage
-* change the `differential_equation` function for the specific one to solve it using Modified Euler's Method
+* change or replace the `differential_equation` function for the specific one to solve it using Modified Euler's Method
 * execute `modified_euler_method` function with specific parameters:
   - `differential_equation` function
   - initial x value
