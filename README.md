@@ -18,7 +18,8 @@ Implementation of algorithm solving differential equation using Modified Euler's
 * get output value as plot, dataframe and CSV file
 
 ### Example
-```python
+Solving `x + x * y + y + 1` differential equation with initial condition `y(-1)=1` in range `[-1,1]` with step `0.25`. 
+```python 
 def differential_equation(x: float, y: float) -> float:
     """
     Any differential equation
