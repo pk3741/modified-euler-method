@@ -45,10 +45,9 @@ def modified_euler_method(func: callable, start_x: float, start_y: float, min_x:
 # calculations
 mem = modified_euler_method(differential_equation, -1., 1., -1., 1., 0.25)
 
-# pandas data representation
-df = pd.DataFrame(mem, columns = ['x', 'y'])
-df = df.set_index('x')
-print(df)
+# pandas data representation and CSV file saving
+df = pd.DataFrame(mem, columns=['x', 'y'])
+df.to_csv('output_data.csv', sep=';')
 
 # plot
 x, y = mem.T
@@ -57,5 +56,3 @@ plt.grid(color='gray', linestyle='-', linewidth=0.5)
 plt.ylabel('x')
 plt.xlabel('y')
 plt.show()
-
-
