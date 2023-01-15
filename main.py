@@ -1,4 +1,5 @@
 import numpy as np
+from matplotlib import pyplot as plt
 
 
 def differential_equation(x: float, y: float) -> float:
@@ -27,8 +28,8 @@ def modified_euler_method(func: callable, start_x: float, start_y: float, min_x:
     Returns:
         np.ndarray: modified euler method calculated values
     """
-    calculated_values = np.array([[start_x, start_y + h]])
-    for i in np.arange(min_x + h, max_x, h):
+    calculated_values = np.array([[start_x, start_y]])
+    for i in np.arange(min_x + h, max_x + h, h):
         last_x = calculated_values[-1][0]
         last_y = calculated_values[-1][1]
         new_x = i;
@@ -40,4 +41,12 @@ def modified_euler_method(func: callable, start_x: float, start_y: float, min_x:
     return calculated_values
 
 
-modified_euler_method(differential_equation, -1., 1., -1., 1., 0.25)
+# calculations
+mem = modified_euler_method(differential_equation, -1., 1., -1., 1., 0.25)
+print(mem)
+
+# plot
+x, y = mem.T
+plt.plot(x, y)
+plt.grid(color='gray', linestyle='-', linewidth=0.5)
+plt.show()
