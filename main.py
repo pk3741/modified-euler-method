@@ -1,5 +1,6 @@
 import numpy as np
 from matplotlib import pyplot as plt
+import pandas as pd
 
 
 def differential_equation(x: float, y: float) -> float:
@@ -43,7 +44,11 @@ def modified_euler_method(func: callable, start_x: float, start_y: float, min_x:
 
 # calculations
 mem = modified_euler_method(differential_equation, -1., 1., -1., 1., 0.25)
-print(mem)
+
+# pandas data representation
+df = pd.DataFrame(mem, columns = ['x', 'y'])
+df = df.set_index('x')
+print(df)
 
 # plot
 x, y = mem.T
@@ -52,3 +57,5 @@ plt.grid(color='gray', linestyle='-', linewidth=0.5)
 plt.ylabel('x')
 plt.xlabel('y')
 plt.show()
+
+
