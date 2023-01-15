@@ -49,4 +49,6 @@ print(mem)
 x, y = mem.T
 plt.plot(x, y)
 plt.grid(color='gray', linestyle='-', linewidth=0.5)
+plt.ylabel('x')
+plt.xlabel('y')
 plt.show()
